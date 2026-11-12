@@ -3,17 +3,10 @@
 
 using namespace std;
 
-class SecretAgent {
-    public: 
-        string code; 
-        char place; 
-        int time;
-
-        SecretAgent(string code, char place, int time) {
-            this->code = code;
-            this->place = place;
-            this->time = time;
-        }
+struct SecretAgent {
+    string code;
+    char place;
+    int time;
 };
 
 int main() {
@@ -24,10 +17,10 @@ int main() {
     cin >> secret_code >> meeting_point >> time;
 
     // Please write your code here.
-    SecretAgent secretAgent = SecretAgent(secret_code, meeting_point, time);
-    cout << "secret code : " << secretAgent.code << endl;
-    cout << "meeting point : " << secretAgent.place << endl;
-    cout << "time : " << secretAgent.time << endl;
+    SecretAgent s{secret_code, meeting_point, time};
+    cout << "secret code : " << s.code << endl;
+    cout << "meeting point : " << s.place << endl;
+    cout << "time : " << s.time << endl;
 
     return 0;
 }
