@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
-#define MAX 30
+#include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -20,21 +21,21 @@ int main() {
     }
 
     // 10진수 -> b진수로 변환
-    int digit[MAX] = {};
-    int cnt = 0;
+    vector<int> digit;
     while (true) {
         if (decimalN < b) {
-            digit[cnt] = decimalN;
+            digit.push_back(decimalN);
             break;
         }
 
-        digit[cnt++] = decimalN % b;
+        digit.push_back(decimalN % b);
         decimalN /= b;
     }
 
     // 역순 출력
-    for (int i = cnt; i >= 0; i--) {
-        cout << digit[i];
+    reverse(digit.begin(), digit.end());
+    for (int d : digit) {
+        cout << d;
     }
 
     return 0;
