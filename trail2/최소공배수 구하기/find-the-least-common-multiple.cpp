@@ -5,11 +5,12 @@ using namespace std;
 int n, m;
 
 int GetLcm(int n, int m) {
-    for (int i = 1; i <= m; i++) {
+    for (int i = 1; i < m; i++) {
         if ((n * i) % m == 0) {
             return (n * i);
         }
     }
+    return n * m;
 }
 
 int main() {
