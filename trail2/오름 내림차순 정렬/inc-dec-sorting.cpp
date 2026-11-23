@@ -1,12 +1,13 @@
 #include <iostream>
 #include <algorithm>
+#include <functional>
 
 using namespace std;
 
 int n;
 int nums[100];
 
-void Print(int numbers[100]) {
+void Print(const int numbers[]) {
     for (int i = 0; i < n; i++) {
         cout << numbers[i] << ' ';
     }
